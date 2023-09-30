@@ -27,23 +27,27 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.sizeOf(context);
-    print(size);
-    print(size.width);
-    print(size.height);
-    print(size.aspectRatio);
-    print(size.flipped);
-    Orientation orientation = MediaQuery.orientationOf(context);
-    print(orientation);
+    // Size size = MediaQuery.sizeOf(context);
+    // print(size);
+    // print(size.width);
+    // print(size.height);
+    // print(size.aspectRatio);
+    // print(size.flipped);
+    // Orientation orientation = MediaQuery.orientationOf(context);
+    // print(orientation);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Pass'),
+        title: Text('Profile'),
       ),
-      body: Column(
-        children: [
+      body: OrientationBuilder(builder: (context, orientation) {
+        if(orientation == Orientation.portrait){
+          return Center(child: Text('Portrait'));
+        }else{
+          return Center(child: Text('Landscape'));
+        }
+      },
 
-        ],
-      ),
+      )
     );
   }
 }
